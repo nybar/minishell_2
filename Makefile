@@ -6,13 +6,14 @@
 #    By: bbach <bbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 11:05:57 by bbach             #+#    #+#              #
-#    Updated: 2023/11/18 15:59:34 by bbach            ###   ########.fr        #
+#    Updated: 2023/11/23 11:47:01 by bbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.c \
 	valid_input.c \
-	parsing.c 
+	parsing.c \
+	get_env.c 
 
 
 OBJS = $(SRC:.c=.o)

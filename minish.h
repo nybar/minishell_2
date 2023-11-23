@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:58:48 by bbach             #+#    #+#             */
-/*   Updated: 2023/11/18 16:32:41 by bbach            ###   ########.fr       */
+/*   Updated: 2023/11/23 11:58:42 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 typedef struct s_minish
 {
     char    *input;
+    char    **my_env;
 }           t_minish;
 
 
@@ -45,5 +46,12 @@ int     valid_input(char *input);
 void    sort_input(t_minish *minish, char *input);
 int     str_in_input(char *str);
 char    *ft_strndup(char *s, int n);
+
+// get_env.c
+
+char    **get_my_env(char **env, t_minish *minish);
+char    *get_value_any_env(char **any_env, char *key);
+int      ft_strcmp(char *s1,char *s2);
+char     **ft_strsplit(char *str, char c);
 
 #endif

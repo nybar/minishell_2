@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 15:35:25 by bbach             #+#    #+#             */
-/*   Updated: 2023/11/18 16:46:02 by bbach            ###   ########.fr       */
+/*   Updated: 2023/11/23 11:38:24 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ void    sort_input(t_minish *minish, char *input)
         i++;
     }
     tab[k] = NULL;
-    while (k-- > 0)
+    k = 0;
+    while (tab[k])
     {
         printf("tab[%d] = %s\n", k, tab[k]);
+        k++;
     }
 }
 
