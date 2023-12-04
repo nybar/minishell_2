@@ -5,16 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbach <bbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/18 11:05:57 by bbach             #+#    #+#              #
-#    Updated: 2023/11/23 11:47:01 by bbach            ###   ########.fr        #
+#    Created: 2023/12/02 22:43:36 by bbach             #+#    #+#              #
+#    Updated: 2023/12/03 13:50:01 by bbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.c \
-	valid_input.c \
-	parsing.c \
-	get_env.c 
-
+	handle_quotes.c \
+  	parsing.c \
+	parsing_utils.c \
+	init.c \
+	get_any_env.c \
+	execution.c 
 
 OBJS = $(SRC:.c=.o)
 
@@ -24,7 +26,7 @@ NAME = minishell
 
 LIB = ./includes/libft/libft/libft.a
 
-CC = gcc 
+CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -g
 
