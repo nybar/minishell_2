@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 22:15:31 by bbach             #+#    #+#             */
-/*   Updated: 2023/12/04 12:52:48 by bbach            ###   ########.fr       */
+/*   Updated: 2023/12/06 11:33:46 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,9 @@ void	init_lexer(t_lexer *lx, char *line);
 char   *get_command_path(char *command, char **env);
 char   *find_command_path(char *command, char **path);
 void	execute_command(t_node *command, char **env);
+
+//replace_the_dollar
+
+char	*replace_the_dollar(char *line, char **env);
 
 #endif

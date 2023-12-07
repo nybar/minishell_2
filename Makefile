@@ -6,7 +6,7 @@
 #    By: bbach <bbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 22:43:36 by bbach             #+#    #+#              #
-#    Updated: 2023/12/03 13:50:01 by bbach            ###   ########.fr        #
+#    Updated: 2023/12/06 11:29:32 by bbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRC = main.c \
 	parsing_utils.c \
 	init.c \
 	get_any_env.c \
-	execution.c 
+	execution.c \
+	replace_the_dollar.c 
 
 OBJS = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 13:07:56 by bbach             #+#    #+#             */
-/*   Updated: 2023/12/04 13:07:15 by bbach            ###   ########.fr       */
+/*   Updated: 2023/12/06 13:29:28 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char	*get_command_path(char *command, char **env)
 	char	*full_path;
 	int		i;
 
-    ft_printf("Command: %s\n", command);
-    ft_printf("PATH: %s\n", get_value_any_env(env, "PATH"));
+    ft_printf("$USER %s\n", get_value_any_env(env, "USER"));
 	path_dirs = ft_strsplit(get_value_any_env(env, "PATH"), ':');
 	i = 0;
 	while (path_dirs[i])
@@ -95,7 +94,7 @@ void execute_command(t_node *command, char **env)
     if (command->op_type == T_WORD)
     {
         // Exécution d'une commande simple
-        ft_printf("Commande simple: %s\n", command->value);
+        command->args = ft_strsplit(command->value, ' '); 
         char *command_path = get_command_path(command->value, env);
         ft_printf("Command path: %s\n", command_path);
         if (command_path != NULL)
@@ -105,8 +104,8 @@ void execute_command(t_node *command, char **env)
             {
                 // Processus fils
                 execve(command_path, command->args, env);
-                perror("Erreur d'exécution");
-                exit(EXIT_FAILURE);
+                ft_printf("%s: Command not found\n", command->value);
+                return (exit(EXIT_FAILURE));
             }
             else if (pid > 0)
             {
@@ -121,7 +120,7 @@ void execute_command(t_node *command, char **env)
         }
         else
         {
-            fprintf(stderr, "Commande introuvable: %s\n", command->value);
+            ft_putstr_fd("Commande introuvable", 1);
         }
     }
     else if (command->op_type == T_BAR)

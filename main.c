@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:30:49 by bbach             #+#    #+#             */
-/*   Updated: 2023/12/04 12:08:51 by bbach            ###   ########.fr       */
+/*   Updated: 2023/12/06 14:39:21 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ int main(int ac, char **av, char **env)
     while (1)
     {
         line = readline(">$ ");
-        if (!line)
-            break;
-        add_history(line);;
+        // if (!line)
+        //     break;
+        add_history(line);
+        // dequoted needed for the lexer
+        if (replace_the_dollar(line, env) != NULL) 
+            line = replace_the_dollar(line, env);
         token_list = tokenize_input(line);
 
         // Parcours de la liste de tokens et exécution des commandes

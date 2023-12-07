@@ -6,7 +6,7 @@
 /*   By: bbach <bbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 22:04:30 by bbach             #+#    #+#             */
-/*   Updated: 2023/12/04 12:25:48 by bbach            ###   ########.fr       */
+/*   Updated: 2023/12/06 13:18:47 by bbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,14 @@ char    *get_value_any_env(char **any_env, char *key)
     while (any_env[i])
     {
         str_tmp = ft_strdup(any_env[i]);
-        // ft_printf("str_tmp = %s\n", str_tmp);
+       // ft_printf("str_tmp = %s\n", str_tmp);
         tmp = ft_strsplit(str_tmp, '=');
         if (ft_strcmp(tmp[0], key) == SUCCESS)
         {
             value = ft_strdup(tmp[1]);
-            ft_printf("key = %s\n", key);
-            ft_printf("tmp de 0 = %s\n", tmp[0]);
-            ft_printf("value = %s\n", value);
+            // ft_printf("key = %s\n", key);
+            // ft_printf("tmp de 0 = %s\n", tmp[0]);
+            // ft_printf("value = %s\n", value);
             free(str_tmp);
             ft_free_2d_array(tmp);
             return (value);
